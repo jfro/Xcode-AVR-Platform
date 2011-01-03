@@ -1,0 +1,65 @@
+
+(
+	// Tool (normal Unix command-line executable)
+    {   Type = ProductType;
+        Identifier = com.buttered-cat.product-type.avr-firmware;
+        Class = PBXToolProductType;
+        Name = "AVR Firmware";
+        Description = "AVR Firmware";
+        IconNamePrefix = "TargetExecutable";
+        DefaultTargetName = "AVR Firmware";
+        SupportsZeroLink = NO;
+        DefaultBuildProperties = {
+            FULL_PRODUCT_NAME = "$(EXECUTABLE_NAME)";
+            EXECUTABLE_PREFIX = "";
+            EXECUTABLE_SUFFIX = "";
+            REZ_EXECUTABLE = NO;
+            INSTALL_PATH = "/usr/local/bin";
+            FRAMEWORK_FLAG_PREFIX = "";
+            LIBRARY_FLAG_PREFIX = "-l";
+            LIBRARY_FLAG_NOSPACE = YES;
+            GCC_DYNAMIC_NO_PIC = YES;
+            GCC_SYMBOLS_PRIVATE_EXTERN = YES;
+            GCC_INLINES_ARE_PRIVATE_EXTERN = YES;
+            STRIP_STYLE = "all";
+            CODE_SIGNING_ALLOWED = NO;
+        };
+        PackageTypes = (
+            com.buttered-cat.package-type.elf-binary
+        );
+    },
+
+    
+    {   Type = ProductType;
+        Identifier = com.apple.product-type.library.static;
+        Class = PBXStaticLibraryProductType;
+        Name = "Static Library";
+        Description = "Static library";
+        IconNamePrefix = "TargetLibrary";
+        DefaultTargetName = "Static Library";
+        DefaultBuildProperties = {
+            FULL_PRODUCT_NAME = "$(EXECUTABLE_NAME)";
+            MACH_O_TYPE = "staticlib";
+            REZ_EXECUTABLE = YES;
+            EXECUTABLE_PREFIX = "lib";
+            EXECUTABLE_SUFFIX = ".$(EXECUTABLE_EXTENSION)";
+            EXECUTABLE_EXTENSION = "a";
+            PUBLIC_HEADERS_FOLDER_PATH = "/usr/local/include";
+            PRIVATE_HEADERS_FOLDER_PATH = "/usr/local/include";
+            INSTALL_PATH = "/usr/local/lib";
+            FRAMEWORK_FLAG_PREFIX = "-framework";
+            LIBRARY_FLAG_PREFIX = "-l";
+            LIBRARY_FLAG_NOSPACE = YES;
+            STRIP_STYLE = "debugging";
+            SEPARATE_STRIP = YES;
+            GCC_ENABLE_SYMBOL_SEPARATION = NO;
+            CODE_SIGNING_ALLOWED = NO;      
+        };
+        AlwaysPerformSeparateStrip = YES;
+        PackageTypes = (
+            com.apple.package-type.static-library   
+        );
+    },
+
+
+)

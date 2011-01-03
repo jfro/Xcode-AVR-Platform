@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CFBundleDevelopmentRegion</key>
+	<string>English</string>
+	<key>CFBundleIdentifier</key>
+	<string>com.buttered-cat.platform.avr</string>
+	<key>CFBundleName</key>
+	<string>AVR SDKs</string>
+	<key>CFBundleShortVersionString</key>
+	<string>0.3</string>
+	<key>DefaultDebuggerSettings</key>
+	<dict>
+		<key>RunInDebugger</key>
+		<string>NO</string>
+	</dict>
+	<key>DefaultProperties</key>
+	<dict>
+		<key>ARCHS</key>
+		<string>atmega328p</string>
+		<key>NATIVE_ARCH</key>
+		<string>atmega328p</string>
+		<key>SDKROOT</key>
+		<string>avr</string>
+	</dict>
+	<key>Description</key>
+	<string>AVR/Arduino</string>
+	<key>FamilyIdentifier</key>
+	<string>avr</string>
+	<key>FamilyName</key>
+	<string>AVR/Arduino</string>
+	<key>Icon</key>
+	<string>AVR.icns</string>
+	<key>Identifier</key>
+	<string>com.buttered-cat.platform.avr</string>
+	<key>Name</key>
+	<string>avr</string>
+	<key>Type</key>
+	<string>Platform</string>
+	<key>Version</key>
+	<string>1.0</string>
+</dict>
+</plist>

@@ -1,0 +1,21 @@
+{
+    Class = Native;
+    ProductType = "com.buttered-cat.product-type.avr-firmware";
+    Description = "Target for building an AVR firmware.";
+    CustomBuildSettings = {
+        ALWAYS_SEARCH_USER_PATHS = NO;
+		INSTALL_PATH = "/usr/local/bin";
+        PRODUCT_NAME = "«PRODUCTNAME»";
+		SDKROOT = "avr1.0";
+		OTHER_LDFLAGS = "$(SDKROOT)/arduino/libArduinoCore.$(arch).a";
+		HEADER_SEARCH_PATHS = "$(SDKROOT)/arduino/cores/arduino";
+    };
+	BuildPhases = (
+        {
+            Class = Sources;
+        },
+        {
+            Class = Frameworks;
+        },
+	);
+}

@@ -1,0 +1,70 @@
+(
+{   Type = Linker;
+	Identifier = com.apple.pbx.linkers.ld;
+	//BasedOn = "default:com.apple.pbx.linkers.ld";
+	Class = PBXLinkerSpecificationLd;
+	Name = "AVR Linker";
+	BinaryFormats = (elf);
+	Architectures = (atmega328,atmega328p);
+	//CommandLine = "$(gcc_compiler_driver_for_linking) [options] [special-args] -o $(OutputPath)";      // 'special-args' includes the input files
+	ExecPath   = "/usr/local/CrossPack-AVR/bin/avr-gcc";
+	RuleName = "AVR Ld $(OutputPath) $(variant) $(arch)";
+	ExecDescription = "AVR Link $(OutputPath)";
+	CommandOutputParser = XCGccCommandOutputParser;
+    SupportsInputFileList = No;
+	InputFileTypes = (
+        compiled.mach-o.objfile,
+        compiled.mach-o.dylib,
+        wrapper.framework,
+        archive.ar
+    );
+    Outputs = (
+        // We're a linker-like task, so we expect to be given an output path in 'OutputPath'.
+        "$(OutputPath)"
+    );
+    Options = (
+		{	Name = "OutputPath";
+			Type = Path;
+			CommandLineFlag = "-o";
+		},
+        // prevent this definition on the command line for iPhoneOS
+        {   Name = MACOSX_DEPLOYMENT_TARGET;
+            Type = String;
+        },
+
+        {   Name = IPHONEOS_DEPLOYMENT_TARGET;
+            Type = String;
+        },
+        
+        {   Name = LD_NO_PIE;
+            Type = Boolean;
+            DefaultValue = NO;
+            CommandLineArgs = { YES = ("-Xlinker", "-no_pie"); NO = (); };
+        },
+		// SDK
+        {   Name = SDKROOT;
+            Type = Path;
+            //Condition = " $(GCC_VERSION) != 3.3 ";
+            //CommandLineFlag = "-isysroot";
+            //IsInputDependency = NO;
+        },
+		{	Name = object_files;
+			Type = PathList;
+			CommandLineFlag = "";
+			IsInputDependency = Yes;
+		},
+		{   Name = ALL_OTHER_LDFLAGS;
+            Type = StringList;
+            DefaultValue = "$(LD_FLAGS) $(SECTORDER_FLAGS) $(OTHER_LDFLAGS) $(OTHER_LDFLAGS_$(variant)) $(OTHER_LDFLAGS_$(arch)) $(OTHER_LDFLAGS_$(variant)_$(arch)) $(OTHER_LIBTOOLFLAGS) $(OTHER_LIBTOOLFLAGS_$(variant)) $(OTHER_LIBTOOLFLAGS_$(arch)) $(OTHER_LIBTOOLFLAGS_$(variant)_$(arch)) $(PRODUCT_SPECIFIC_LDFLAGS)";
+            CommandLinePrefixFlag = "";
+        },
+        // Input file lists
+        {   Name = __INPUT_FILE_LIST_PATH__;
+            Type = Path;
+            //DefaultValue = "$(LINK_FILE_LIST_$(variant)_$(arch))";      // this is set up for us as a read-only property
+            //CommandLineArgs = "";
+            //IsInputDependency = No;
+        },
+    );
+},
+)

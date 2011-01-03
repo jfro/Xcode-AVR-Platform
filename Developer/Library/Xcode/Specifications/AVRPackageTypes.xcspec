@@ -1,0 +1,41 @@
+// need to figure out how to label them as elf?
+(
+	// Mach-O executable
+	{   Type = PackageType;
+	    Identifier = com.buttered-cat.package-type.elf-binary;
+	    Name = "ELF Binary";
+	    Description = "ELF Binary";
+	    DefaultBuildSettings = {
+	        EXECUTABLE_PREFIX = "";
+	        EXECUTABLE_SUFFIX = "";
+	        EXECUTABLE_NAME = "$(EXECUTABLE_PREFIX)$(PRODUCT_NAME)$(EXECUTABLE_VARIANT_SUFFIX)$(EXECUTABLE_SUFFIX)";
+	        EXECUTABLE_PATH = "$(EXECUTABLE_NAME)";
+	    };
+	    ProductReference = {
+	        FileType = compiled.mach-o.executable;
+	        Name = "$(EXECUTABLE_NAME)";
+	        IsLaunchable = NO;
+	    };
+	},
+
+    
+    {   Type = PackageType;
+        Identifier = com.apple.package-type.static-library;
+        Name = "AVR Static Library";
+        Description = "AVR static library";
+        DefaultBuildSettings = {
+            EXECUTABLE_PREFIX = "lib";
+            EXECUTABLE_SUFFIX = ".a";
+            EXECUTABLE_NAME = "$(EXECUTABLE_PREFIX)$(PRODUCT_NAME)$(EXECUTABLE_VARIANT_SUFFIX)$(EXECUTABLE_SUFFIX)";
+            EXECUTABLE_PATH = "$(EXECUTABLE_NAME)";
+        };
+        ProductReference = {
+            FileType = archive.ar;
+            Name = "$(EXECUTABLE_NAME)";
+            IsLaunchable = NO;
+        };
+    },
+
+
+)
+

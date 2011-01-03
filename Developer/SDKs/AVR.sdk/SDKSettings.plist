@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CanonicalName</key>
+	<string>avr1.0</string>
+	<key>CustomProperties</key>
+	<dict/>
+	<key>DefaultProperties</key>
+	<dict>
+		<key>GCC_VERSION</key>
+		<string>com.buttered-cat.avr.gcc.4_3</string>
+		<key>PLATFORM_NAME</key>
+		<string>avr</string>
+	</dict>
+	<key>DisplayName</key>
+	<string>AVR</string>
+	<key>IsBaseSDK</key>
+	<string>YES</string>
+	<key>MinimalDisplayName</key>
+	<string>AVR</string>
+	<key>MinimumSupportedToolsVersion</key>
+	<string>3.2.3</string>
+	<key>Version</key>
+	<string>1.0</string>
+</dict>
+</plist>

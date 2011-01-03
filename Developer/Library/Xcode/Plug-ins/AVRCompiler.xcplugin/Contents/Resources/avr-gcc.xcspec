@@ -1,0 +1,98 @@
+(
+	{
+		Identifier = "com.buttered-cat.avr.gcc.4_3";
+		BasedOn    = "com.apple.compilers.gcc.4_2";
+		Type	   = Compiler;
+		Name       = "AVR gcc 4.3.3";
+		Version    = "com.buttered-cat.avr.gcc.4_3";
+		Vendor     = "buttered-cat.com";
+		ExecPath   = "/usr/local/CrossPack-AVR/bin/avr-gcc";
+//		ExecCPlusPlusLinkerPath = "/usr/local/CrossPack-AVR/bin/avr-g++";
+//		RequiredLinker = "com.buttered-cat.avr.linkers.ld";
+		Architectures = (atmega328,atmega328p);
+		SupportsIsysroot = No;
+		SupportsHeadermaps = NO; /* looks like xcode 4 only? */
+		FileTypes = (
+	        "sourcecode.c.c",
+	        "sourcecode.c.objc",
+	        "sourcecode.cpp.cpp",
+	        "sourcecode.cpp.objcpp",
+	        "sourcecode.asm",
+	    );
+		Options = (
+		        {   Name = arch;
+		            CommandLineArgs = ( );
+		/* despite overriding arch here, the link command still generates it, so we have to implement it in the compiler too */
+		        },
+			{
+				Name = "GCC_CW_ASM_SYNTAX";
+				Type = Boolean;
+				DefaultValue = NO;
+				CommandLineArgs = { YES = (); NO = (); };
+				AppearsAfter = GCC_ALTIVEC_EXTENSIONS;
+				Category = Language;
+			},
+			{
+	            Name = "GCC_ENABLE_PASCAL_STRINGS";
+	            Type = Boolean;
+	            DefaultValue = NO;
+	            CommandLineArgs = {
+	                YES = (
+	                );
+	                NO = ();
+	            };
+	            Category = Language;
+	        },
+	        {
+	            Name = "GCC_ENABLE_FIX_AND_CONTINUE";
+	            Type = Boolean;
+	            DefaultValue = NO;
+	            CommandLineArgs = {
+	                YES = (
+	                );
+	                NO = ();
+	            };
+	            "AdditionalArgsForFixBundlizing" = ();
+	            Category = CodeGeneration;
+	            Description = "Activating this setting indicates that binaries should be built for use with Fix & Continue. This setting is enabled by default in Debug build configurations and should be enabled or disabled there. Note: It is recommended that release or deployment builds NOT be built for use with Fix & Continue.\n\nActivating this setting will disable the settings \"Symbols Hidden by Default\" and \"Generate Position-Dependent Code\".\n\n[GCC_ENABLE_FIX_AND_CONTINUE, -mfix-and-continue]";
+	        },
+	        {   Name = USE_HEADERMAP;
+	            Type = bool;
+	            DefaultValue = NO;
+	        },
+			{
+				Name = "AVR_CPU_CLOCK";
+				Type = Enumeration;
+				AllowedValues = (
+					1000000L,
+					16000000L,
+	            );
+	            DefaultValue = 16000000L;
+	            CommandLineArgs = {
+	                "" = ();
+	                "<<otherwise>>" = (
+	                    "-DF_CPU=$(value)",
+	                );
+	            };
+	            Category = CodeGeneration;
+	        },
+	        {
+	            Name = "use_pipe";
+	            Type = Boolean;
+	            //DefaultValue = NO;
+	            //CommandLineFlag = "-pipe";
+	        },
+	        {
+	            Name = "GCC_CHAR_IS_UNSIGNED_CHAR";
+	            Type = Boolean;
+	            DefaultValue = YES;
+	            CommandLineArgs = {
+	                YES = (
+	                    "-funsigned-char",
+	                );
+	                NO = ();
+	            };
+			},
+		);
+	},
+)

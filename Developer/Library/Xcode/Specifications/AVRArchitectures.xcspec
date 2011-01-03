@@ -1,0 +1,32 @@
+/**
+    AVR Architectures.xcspec
+	TODO: Add more common arduino archs
+*/
+(
+    {   Type = Architecture;
+        Identifier = PlatformUno;
+        Name = "Uno (atmega328p)";
+        Description = "Arduino Uno";
+        ListInEnum = YES;
+        SortNumber = 1;
+        RealArchitectures = ( atmega328p );
+        ArchitectureSetting = "ARCHS_UNO";
+    },
+
+    {   Type = Architecture;
+        Identifier = atmega328;
+        Name = "ATMega328";
+        Description = "ATMega328";
+        PerArchBuildSettingName = "ATMega328";
+        ByteOrder = little;
+        SortNumber = 100;
+    },
+    {   Type = Architecture;
+        Identifier = atmega328p;
+        Name = "ATMega328p";
+        Description = "ATMega328p";
+        PerArchBuildSettingName = "ATMega328p";
+        ByteOrder = little;
+        SortNumber = 140;
+    },
+)
