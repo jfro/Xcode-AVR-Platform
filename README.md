@@ -11,3 +11,4 @@ Todo
 * Properly label object file types elf (probably not necessary, OCD)
 * Add phase to handle doing the ihex stuff
 * Figure why SDK shows as Unknown OS
+* Get target to specify our custom linker, currently overriding apple's identifier
