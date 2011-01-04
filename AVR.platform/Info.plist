@@ -18,7 +18,7 @@
 	<key>DefaultProperties</key>
 	<dict>
 		<key>ARCHS</key>
-		<string>atmega328p</string>
+		<string>$(ARCH_UNO)</string>
 		<key>NATIVE_ARCH</key>
 		<string>atmega328p</string>
 		<key>SDKROOT</key>

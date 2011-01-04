@@ -14,13 +14,13 @@
 		<string>avr</string>
 	</dict>
 	<key>DisplayName</key>
-	<string>AVR</string>
+	<string>AVR SDK</string>
 	<key>IsBaseSDK</key>
-	<string>YES</string>
+	<string>NO</string>
 	<key>MinimalDisplayName</key>
 	<string>AVR</string>
 	<key>MinimumSupportedToolsVersion</key>
-	<string>3.2.3</string>
+	<string>3.2.0</string>
 	<key>Version</key>
 	<string>1.0</string>
 </dict>

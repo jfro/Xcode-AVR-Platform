@@ -2,6 +2,7 @@
 	{
 		Identifier = "com.buttered-cat.avr.gcc.4_3";
 		BasedOn    = "com.apple.compilers.gcc.4_2";
+//		Class = PBXCompilerSpecificationGcc3_3;
 		Type	   = Compiler;
 		Name       = "AVR gcc 4.3.3";
 		Version    = "com.buttered-cat.avr.gcc.4_3";
@@ -9,9 +10,26 @@
 		ExecPath   = "/usr/local/CrossPack-AVR/bin/avr-gcc";
 //		ExecCPlusPlusLinkerPath = "/usr/local/CrossPack-AVR/bin/avr-g++";
 //		RequiredLinker = "com.buttered-cat.avr.linkers.ld";
+		
+		// from gcc4.0
+		BuiltinJambaseRuleName = "ProcessC";   // <== is this still used?  A.B. 2004.09.20
+	    CommandOutputParser = XCGccCommandOutputParser;
+//	    PrecompStyle = pch;
+	    SupportsHeadermaps = No;
+	    DashIFlagAcceptsHeadermaps = No;
+	    SupportsIsysroot = No;
+	    SupportsZeroLink = No;
+	    SupportsPredictiveCompilation = No;
+	    SupportsSeparateUserHeaderPaths = Yes;
+	    SupportsSymbolSeparation = Yes;
+	    SupportsMacOSXDeploymentTarget = No;
+	    SupportsMacOSXMinVersionFlag = No;
+//	    UseCPlusPlusCompilerDriverWhenBundlizing = Yes;
+	    PatternsOfFlagsNotAffectingPrecomps = ("-v", "-###", "-H", "-time", "-save-temps", "-W*", "-w");
+	
 		Architectures = (atmega328,atmega328p);
-		SupportsIsysroot = No;
-		SupportsHeadermaps = NO; /* looks like xcode 4 only? */
+		
+		// our supported input types
 		FileTypes = (
 	        "sourcecode.c.c",
 	        "sourcecode.c.objc",
@@ -19,11 +37,20 @@
 	        "sourcecode.cpp.objcpp",
 	        "sourcecode.asm",
 	    );
+	
+	// 	OTHER_CFLAGS = -Wstrict-prototypes -Wall -mmcu=atmega328p
 		Options = (
-		        {   Name = arch;
-		            CommandLineArgs = ( );
-		/* despite overriding arch here, the link command still generates it, so we have to implement it in the compiler too */
-		        },
+	        {	Name = arch;
+				CommandLineArgs = "-mmcu=$(value)";
+	        },
+			{	Name = HEADER_SEARCH_PATHS;
+				Type = StringList;
+				CommandLineFlag = "-I";
+				DefaultValue = "$(SDKROOT)/arduino/cores/arduino";
+			},
+			{	Name = FRAMEWORK_SEARCH_PATHS;
+				Type = String;
+			},
 			{
 				Name = "GCC_CW_ASM_SYNTAX";
 				Type = Boolean;
@@ -32,6 +59,13 @@
 				AppearsAfter = GCC_ALTIVEC_EXTENSIONS;
 				Category = Language;
 			},
+			// SDK, we don't have one, at least not one we use with a flag
+	        {   Name = SDKROOT;
+	            Type = Path;
+	            //Condition = " $(GCC_VERSION) != 3.3 ";
+	            //CommandLineFlag = "-isysroot";
+	            //IsInputDependency = NO;
+	        },
 			{
 	            Name = "GCC_ENABLE_PASCAL_STRINGS";
 	            Type = Boolean;

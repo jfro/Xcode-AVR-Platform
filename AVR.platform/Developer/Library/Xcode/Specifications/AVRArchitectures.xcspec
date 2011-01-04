@@ -10,13 +10,24 @@
         ListInEnum = YES;
         SortNumber = 1;
         RealArchitectures = ( atmega328p );
-        ArchitectureSetting = "ARCHS_UNO";
+        ArchitectureSetting = "ARCH_UNO";
     },
+// Arduino Duemilanove
+	{	Type = Architecture;
+        Identifier = PlatformDuemilanove;
+        Name = "Arduino Duemilanove (atmega328)";
+        Description = "Arduino Uno";
+        ListInEnum = YES;
+        SortNumber = 2;
+        RealArchitectures = ( atmega328 );
+        ArchitectureSetting = "ARCH_DUEMILANOVE";
+	},
 
     {   Type = Architecture;
         Identifier = atmega328;
         Name = "ATMega328";
         Description = "ATMega328";
+		ListInEnum = YES;
         PerArchBuildSettingName = "ATMega328";
         ByteOrder = little;
         SortNumber = 100;
@@ -25,6 +36,7 @@
         Identifier = atmega328p;
         Name = "ATMega328p";
         Description = "ATMega328p";
+		ListInEnum = YES;
         PerArchBuildSettingName = "ATMega328p";
         ByteOrder = little;
         SortNumber = 140;

@@ -3,12 +3,14 @@
     ProductType = "com.buttered-cat.product-type.avr-firmware";
     Description = "Target for building an AVR firmware.";
     CustomBuildSettings = {
-        ALWAYS_SEARCH_USER_PATHS = NO;
-		INSTALL_PATH = "/usr/local/bin";
+//        ALWAYS_SEARCH_USER_PATHS = NO;
+		INSTALL_PATH = "";
         PRODUCT_NAME = "«PRODUCTNAME»";
 		SDKROOT = "avr1.0";
-		OTHER_LDFLAGS = "$(SDKROOT)/arduino/libArduinoCore.$(arch).a";
-		HEADER_SEARCH_PATHS = "$(SDKROOT)/arduino/cores/arduino";
+		DEBUG_INFORMATION_FORMAT = stabs;
+//		OTHER_LDFLAGS = "";
+//		HEADER_SEARCH_PATHS = "$(SDKROOT)/arduino/cores/arduino";
+//		EXECUTABLE_EXTENSION = "elf"; // seems ignored
     };
 	BuildPhases = (
         {
