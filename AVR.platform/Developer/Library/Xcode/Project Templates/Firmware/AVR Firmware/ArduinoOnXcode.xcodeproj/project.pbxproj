@@ -1,0 +1,225 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 42;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0269E01B12D2E750003BD84A /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F0084DE50D2E4A6C00BCB246 /* main.cpp */; };
+		02B6523612D2ECDE0076078A /* sketch.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 02B6523512D2ECDE0076078A /* sketch.cpp */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXBuildRule section */
+		0269E02212D2E79A003BD84A /* PBXBuildRule */ = {
+			isa = PBXBuildRule;
+			compilerSpec = "com.buttered-cat.avr.gcc.4_3";
+			fileType = sourcecode.cpp;
+			isEditable = 1;
+			outputFiles = (
+			);
+		};
+		0269E02312D2E79A003BD84A /* PBXBuildRule */ = {
+			isa = PBXBuildRule;
+			compilerSpec = "com.buttered-cat.avr.gcc.4_3";
+			fileType = sourcecode.c;
+			isEditable = 1;
+			outputFiles = (
+			);
+		};
+/* End PBXBuildRule section */
+
+/* Begin PBXFileReference section */
+		0282DA5F12D2E3E7001A0AD3 /* AVRFirmware.elf */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = AVRFirmware.elf; sourceTree = BUILT_PRODUCTS_DIR; };
+		02B6523512D2ECDE0076078A /* sketch.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = sketch.cpp; sourceTree = "<group>"; };
+		F0084DE50D2E4A6C00BCB246 /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; indentWidth = 4; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; tabWidth = 4; usesTabs = 1; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		0282DA5D12D2E3E7001A0AD3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		02B6524412D2ED570076078A /* Other sources */ = {
+			isa = PBXGroup;
+			children = (
+				F0084DE50D2E4A6C00BCB246 /* main.cpp */,
+			);
+			name = "Other sources";
+			sourceTree = "<group>";
+		};
+		08FB7794FE84155DC02AAC07 /* ¬´PROJECTNAME¬ª */ = {
+			isa = PBXGroup;
+			children = (
+				08FB7795FE84155DC02AAC07 /* Source */,
+				02B6524412D2ED570076078A /* Other sources */,
+				1AB674ADFE9D54B511CA2CBB /* Products */,
+			);
+			name = "¬´PROJECTNAME¬ª";
+			sourceTree = "<group>";
+		};
+		08FB7795FE84155DC02AAC07 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				02B6523512D2ECDE0076078A /* sketch.cpp */,
+			);
+			name = Source;
+			sourceTree = "<group>";
+		};
+		1AB674ADFE9D54B511CA2CBB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				0282DA5F12D2E3E7001A0AD3 /* AVRFirmware.elf */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		0282DA5E12D2E3E7001A0AD3 /* AVRFirmware */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0282DA6412D2E3FE001A0AD3 /* Build configuration list for PBXNativeTarget "AVRFirmware" */;
+			buildPhases = (
+				0282DA5C12D2E3E7001A0AD3 /* Sources */,
+				0282DA5D12D2E3E7001A0AD3 /* Frameworks */,
+				027241FA12D3EA6200A995AC /* Make Firmware Hex */,
+			);
+			buildRules = (
+				0269E02212D2E79A003BD84A /* PBXBuildRule */,
+				0269E02312D2E79A003BD84A /* PBXBuildRule */,
+			);
+			dependencies = (
+			);
+			name = AVRFirmware;
+			productName = AVRFirmware;
+			productReference = 0282DA5F12D2E3E7001A0AD3 /* AVRFirmware.elf */;
+			productType = "com.buttered-cat.product-type.avr-firmware";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		08FB7793FE84155DC02AAC07 /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = 01706F350A34762900E43B08 /* Build configuration list for PBXProject "ArduinoOnXcode" */;
+			compatibilityVersion = "Xcode 2.4";
+			developmentRegion = English;
+			hasScannedForEncodings = 1;
+			knownRegions = (
+				English,
+				Japanese,
+				French,
+				German,
+			);
+			mainGroup = 08FB7794FE84155DC02AAC07 /* ¬´PROJECTNAME¬ª */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				0282DA5E12D2E3E7001A0AD3 /* AVRFirmware */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		027241FA12D3EA6200A995AC /* Make Firmware Hex */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Make Firmware Hex";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/CrossPack-AVR/bin/avr-objcopy -O ihex -R .eeprom \"$BUILT_PRODUCTS_DIR/$PRODUCT_NAME\" \"$BUILT_PRODUCTS_DIR/$PRODUCT_NAME.hex\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		0282DA5C12D2E3E7001A0AD3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0269E01B12D2E750003BD84A /* main.cpp in Sources */,
+				02B6523612D2ECDE0076078A /* sketch.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		01706F360A34762900E43B08 /* Development */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				SDKROOT = avr1.0;
+			};
+			name = Development;
+		};
+		01706F370A34762900E43B08 /* Deployment */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				SDKROOT = avr1.0;
+			};
+			name = Deployment;
+		};
+		0282DA6012D2E3E8001A0AD3 /* Development */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = stabs;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				INSTALL_PATH = /usr/local/bin;
+				PRODUCT_NAME = AVRFirmware.elf;
+			};
+			name = Development;
+		};
+		0282DA6112D2E3E8001A0AD3 /* Deployment */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = stabs;
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				INSTALL_PATH = /usr/local/bin;
+				PRODUCT_NAME = AVRFirmware.elf;
+				ZERO_LINK = NO;
+			};
+			name = Deployment;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		01706F350A34762900E43B08 /* Build configuration list for PBXProject "ArduinoOnXcode" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				01706F360A34762900E43B08 /* Development */,
+				01706F370A34762900E43B08 /* Deployment */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Development;
+		};
+		0282DA6412D2E3FE001A0AD3 /* Build configuration list for PBXNativeTarget "AVRFirmware" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0282DA6012D2E3E8001A0AD3 /* Development */,
+				0282DA6112D2E3E8001A0AD3 /* Deployment */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Development;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 08FB7793FE84155DC02AAC07 /* Project object */;
+}
