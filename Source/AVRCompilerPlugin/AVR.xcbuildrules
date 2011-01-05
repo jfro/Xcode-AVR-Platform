@@ -1,0 +1,7 @@
+(
+    {
+	Name = "PDE source rule";
+	FileType = "sourcecode.pde";
+	CompilerSpec = "com.buttered-cat.compilers.avr";
+    },
+)

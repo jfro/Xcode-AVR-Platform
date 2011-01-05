@@ -1,0 +1,110 @@
+{
+	Type = Compiler;
+	Identifier = "com.buttered-cat.compilers.avr";
+	Class = "BCAVRCompilerSpecification";
+	Name = "AVR GCC 4.3.3";
+	Description = "AVR GCC 4.3.3";
+	InputFileTypes = (
+		"sourcecode.pde",
+	);
+	CommandOutputParser = (
+		(
+			"^([^:]+):([0-9]+): warning: (.*)$",
+			"emit-warning",
+		),
+		(
+			"^([^:]+):([0-9]+): (.*)$",
+			"emit-error",
+		),
+		(
+			"errors in preprocessor",
+			ignore,
+		),
+		(
+			"error in preprocessor",
+			ignore,
+		),
+	);
+	Options = (
+		{
+			Name = Input;
+			Type = stringlist;
+			CommandLineArgs = (
+				"$(value)",
+			);
+			InputDependencies = "$(Input)";
+			IsCommandInput = YES;
+		},
+		{
+			Name = "SLICE_CPP_FLAG";
+			Type = bool;
+			DefaultValue = NO;
+			Category = Slice;
+		},
+		{
+			Name = "SLICE_ICE_FLAG";
+			Type = bool;
+			DefaultValue = NO;
+			CommandLineArgs = {
+				NO = ();
+				YES = (
+					"--ice",
+				);
+			};
+			Category = Slice;
+		},
+		{
+			Name = "SLICE_STREAM_FLAG";
+			Type = bool;
+			DefaultValue = NO;
+			CommandLineArgs = {
+				NO = ();
+				YES = (
+					"--stream",
+				);
+			};
+			Category = Slice;
+		},
+		{
+			Name = "SLICE_CHECKSUM_FLAG";
+			Type = bool;
+			DefaultValue = NO;
+			CommandLineArgs = {
+				NO = ();
+				YES = (
+					"--checksum",
+				);
+			};
+			Category = Slice;
+		},
+		{
+			Name = "SLICE_INCLUDE_PATH";
+			Type = pathlist;
+			DefaultValue = "";
+			CommandLineArgs = (
+				"-I",
+				"$(value)",
+			);
+			Category = Slice;
+		},
+		{
+			Name = "SLICE_PREPROCESSOR_DEFINITIONS";
+			Type = stringlist;
+			"CommandLinePrefixFlag" = "-D";
+			Category = Slice;
+		},
+		{
+			Name = "SLICE_ICE_HOME";
+			Type = string;
+			DefaultValue = "";
+			Category = Slice;
+		},
+	);
+	OptionCategories = (
+		{
+			Name = "Code Generation";
+			IconName = "PBX-option-build";
+		},
+	);
+	ExecPath = "/usr/local/CrossPack/bin/avr-gcc";
+}
