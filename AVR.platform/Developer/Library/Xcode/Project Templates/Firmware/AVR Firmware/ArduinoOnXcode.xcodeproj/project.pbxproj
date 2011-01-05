@@ -28,6 +28,14 @@
 			outputFiles = (
 			);
 		};
+		02B5148D12D3FA4E0029E8E9 /* PBXBuildRule */ = {
+			isa = PBXBuildRule;
+			compilerSpec = "com.buttered-cat.avr.linkers.ld";
+			fileType = "compiled.mach-o.objfile";
+			isEditable = 1;
+			outputFiles = (
+			);
+		};
 /* End PBXBuildRule section */
 
 /* Begin PBXFileReference section */
@@ -93,6 +101,7 @@
 				027241FA12D3EA6200A995AC /* Make Firmware Hex */,
 			);
 			buildRules = (
+				02B5148D12D3FA4E0029E8E9 /* PBXBuildRule */,
 				0269E02212D2E79A003BD84A /* PBXBuildRule */,
 				0269E02312D2E79A003BD84A /* PBXBuildRule */,
 			);

@@ -8,8 +8,8 @@
 		Version    = "com.buttered-cat.avr.gcc.4_3";
 		Vendor     = "buttered-cat.com";
 		ExecPath   = "/usr/local/CrossPack-AVR/bin/avr-gcc";
-//		ExecCPlusPlusLinkerPath = "/usr/local/CrossPack-AVR/bin/avr-g++";
-//		RequiredLinker = "com.buttered-cat.avr.linkers.ld";
+		ExecCPlusPlusLinkerPath = "/usr/local/CrossPack-AVR/bin/avr-g++";
+		RequiredLinker = "com.buttered-cat.avr.linkers.ld";
 		
 		// from gcc4.0
 		BuiltinJambaseRuleName = "ProcessC";   // <== is this still used?  A.B. 2004.09.20
