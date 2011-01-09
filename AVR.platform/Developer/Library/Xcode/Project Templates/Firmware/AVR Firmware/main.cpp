@@ -1,5 +1,9 @@
 #include "WProgram.h"
 
+void init(void);
+void setup(void);
+void loop(void);
+
 // this is for a bug in Arduino 017/018:
 extern "C" void __cxa_pure_virtual() { while (1); }
 

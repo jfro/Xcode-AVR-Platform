@@ -4,8 +4,11 @@
 	Class = "BCAVRCompilerSpecification";
 	Name = "AVR GCC 4.3.3";
 	Description = "AVR GCC 4.3.3";
+	Architectures = (atmega328,atmega328p);
 	InputFileTypes = (
 		"sourcecode.pde",
+		"sourcecode.cpp.cpp",
+		"sourcecode.c.c",
 	);
 	CommandOutputParser = (
 		(
@@ -106,5 +109,5 @@
 			IconName = "PBX-option-build";
 		},
 	);
-	ExecPath = "/usr/local/CrossPack/bin/avr-gcc";
+	ExecPath = "/usr/local/CrossPack-AVR/bin/avr-gcc";
 }

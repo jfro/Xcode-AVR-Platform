@@ -1,0 +1,76 @@
+{
+	Type = Linker;
+	Identifier = "com.buttered-cat.avr.linker";
+	BasedOn = "com.apple.pbx.linkers.ld";
+	Class = "PBXLinkerSpecificationLd";
+	Name = "AVR Linker";
+	Architectures = (
+		atmega328,
+		atmega328p,
+	);
+	ExecPath = "/usr/local/CrossPack-AVR/bin/avr-gcc";
+	RuleName = "AVR Ld $(OutputPath) $(variant) $(arch)";
+	ExecDescription = "AVR Link $(OutputPath)";
+	CommandOutputParser = "XCGccCommandOutputParser";
+	"SupportsInputFileList" = No;
+	InputFileTypes = (
+		"compiled.mach-o.objfile",
+		"compiled.mach-o.dylib",
+		"wrapper.framework",
+		"archive.ar",
+	);
+	Outputs = (
+		"$(OutputPath)",
+	);
+	Options = (
+		{
+			Name = arch;
+			CommandLineArgs = "-mmcu=$(value)";
+		},
+		{
+			Name = OutputPath;
+			Type = Path;
+			CommandLineFlag = "-o";
+		},
+		{
+			Name = "MACOSX_DEPLOYMENT_TARGET";
+			Type = String;
+		},
+		{
+			Name = "IPHONEOS_DEPLOYMENT_TARGET";
+			Type = String;
+		},
+		{
+			Name = "LD_NO_PIE";
+			Type = Boolean;
+			DefaultValue = NO;
+			CommandLineArgs = {
+				YES = (
+					"-Xlinker",
+					"-no_pie",
+				);
+				NO = ();
+			};
+		},
+		{
+			Name = SDKROOT;
+			Type = Path;
+		},
+		{
+			Name = "object_files";
+			Type = PathList;
+			CommandLineFlag = "";
+			IsInputDependency = Yes;
+		},
+		{
+			Name = "OTHER_LDFLAGS";
+			Type = StringList;
+			DefaultValue = "$(SDKROOT)/arduino/libArduinoCore.$(arch).a -lm";
+			"CommandLinePrefixFlag" = "";
+		},
+		{
+			Name = "__INPUT_FILE_LIST_PATH__";
+			Type = Path;
+		},
+	);
+}

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0208233812DA6EF000C171BD /* AVRLinker.xcspec in Resources */ = {isa = PBXBuildFile; fileRef = 0208233712DA6EF000C171BD /* AVRLinker.xcspec */; };
 		02CF3F4D12D40C3F00F96DF3 /* DevToolsCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02CF3F4C12D40C3F00F96DF3 /* DevToolsCore.framework */; };
 		02CF3F5612D40CA000F96DF3 /* XCPBuildSystem.m in Sources */ = {isa = PBXBuildFile; fileRef = 02CF3F5012D40CA000F96DF3 /* XCPBuildSystem.m */; };
 		02CF3F5C12D40D0700F96DF3 /* BCAVRCompilerSpecification.m in Sources */ = {isa = PBXBuildFile; fileRef = 02CF3F5B12D40D0700F96DF3 /* BCAVRCompilerSpecification.m */; };
@@ -17,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0208233712DA6EF000C171BD /* AVRLinker.xcspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xcspec; path = AVRLinker.xcspec; sourceTree = "<group>"; };
 		02CF3F4C12D40C3F00F96DF3 /* DevToolsCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = DevToolsCore.framework; path = Library/PrivateFrameworks/DevToolsCore.framework; sourceTree = DEVELOPER_DIR; };
 		02CF3F4F12D40CA000F96DF3 /* XCPBuildSystem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XCPBuildSystem.h; sourceTree = "<group>"; };
 		02CF3F5012D40CA000F96DF3 /* XCPBuildSystem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XCPBuildSystem.m; sourceTree = "<group>"; };
@@ -98,6 +100,7 @@
 				02CF3F5F12D40F2C00F96DF3 /* pde.pbfilespec */,
 				02CF3F6112D411F100F96DF3 /* AVR.xcbuildrules */,
 				02CF3F6212D4128300F96DF3 /* AVR.xcspec */,
+				0208233712DA6EF000C171BD /* AVRLinker.xcspec */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -198,6 +201,7 @@
 				8D5B49B0048680CD000E48DA /* InfoPlist.strings in Resources */,
 				02CF3F6012D40F2C00F96DF3 /* pde.pbfilespec in Resources */,
 				02CF3F6312D4128300F96DF3 /* AVR.xcspec in Resources */,
+				0208233812DA6EF000C171BD /* AVRLinker.xcspec in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -238,12 +242,14 @@
 				);
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				GCC_ENABLE_OBJC_GC = supported;
 				GCC_MODEL_TUNING = G5;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = AVRCompilerPlugin_Prefix.pch;
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "$(HOME)/Library/Bundles";
+				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_NAME = AVRCompilerPlugin;
 				WRAPPER_EXTENSION = xcplugin;
 			};
@@ -258,6 +264,7 @@
 					"$(inherited)",
 					"\"$(DEVELOPER_DIR)/Library/PrivateFrameworks\"",
 				);
+				GCC_ENABLE_OBJC_GC = supported;
 				GCC_MODEL_TUNING = G5;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = AVRCompilerPlugin_Prefix.pch;
