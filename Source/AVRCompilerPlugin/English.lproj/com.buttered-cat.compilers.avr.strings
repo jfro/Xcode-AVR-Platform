@@ -1,0 +1,12 @@
+/* 
+  com.buttered-cat.compilers.avr.strings
+  AVRCompilerPlugin
+
+  Created by Jeremy Knope on 1/9/11.
+  Copyright 2011 Ambrosia Software, Inc. All rights reserved.
+*/
+
+"[Arduino]-category" = "AVR/Arduino - code generation";
+
+"[AVR_CPU_CLOCK]-name" = "AVR CPU Clock Speed";
+"[AVR_CPU_CLOCK]-description" = "Clock speed of chip to compile for. [AVR_CPU_CLOCK, -DF_CPU]";

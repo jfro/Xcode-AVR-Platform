@@ -8,7 +8,7 @@
 		atmega328,
 		atmega328p,
 	);
-	ExecPath = "/usr/local/CrossPack-AVR/bin/avr-gcc";
+	ExecPath   = "/usr/local/CrossPack-AVR/bin/avr-gcc";
 	RuleName = "AVR Ld $(OutputPath) $(variant) $(arch)";
 	ExecDescription = "AVR Link $(OutputPath)";
 	CommandOutputParser = "XCGccCommandOutputParser";
@@ -25,6 +25,7 @@
 	Options = (
 		{
 			Name = arch;
+			Type = String;
 			CommandLineArgs = "-mmcu=$(value)";
 		},
 		{

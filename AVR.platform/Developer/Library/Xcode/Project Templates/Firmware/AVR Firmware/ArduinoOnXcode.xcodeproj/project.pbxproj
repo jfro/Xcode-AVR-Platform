@@ -12,6 +12,14 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXBuildRule section */
+		022E420012DA7B5F00D6EC47 /* PBXBuildRule */ = {
+			isa = PBXBuildRule;
+			compilerSpec = "com.buttered-cat.compilers.avr";
+			fileType = sourcecode.pde;
+			isEditable = 1;
+			outputFiles = (
+			);
+		};
 		0269E02212D2E79A003BD84A /* PBXBuildRule */ = {
 			isa = PBXBuildRule;
 			compilerSpec = "com.buttered-cat.compilers.avr";
@@ -28,19 +36,11 @@
 			outputFiles = (
 			);
 		};
-		0278588812DA762A00F18787 /* PBXBuildRule */ = {
-			isa = PBXBuildRule;
-			compilerSpec = "com.buttered-cat.compilers.avr";
-			fileType = sourcecode.pde;
-			isEditable = 1;
-			outputFiles = (
-			);
-		};
 /* End PBXBuildRule section */
 
 /* Begin PBXFileReference section */
 		0282DA5F12D2E3E7001A0AD3 /* AVRFirmware.elf */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = AVRFirmware.elf; sourceTree = BUILT_PRODUCTS_DIR; };
-		02B6523512D2ECDE0076078A /* sketch.pde */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.pde; path = sketch.pde; sourceTree = "<group>"; };
+		02B6523512D2ECDE0076078A /* sketch.pde */ = {isa = PBXFileReference; explicitFileType = sourcecode.pde; fileEncoding = 4; path = sketch.pde; sourceTree = "<group>"; };
 		F0084DE50D2E4A6C00BCB246 /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; indentWidth = 4; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; tabWidth = 4; usesTabs = 1; };
 /* End PBXFileReference section */
 
@@ -101,7 +101,7 @@
 				027241FA12D3EA6200A995AC /* Make Firmware Hex */,
 			);
 			buildRules = (
-				0278588812DA762A00F18787 /* PBXBuildRule */,
+				022E420012DA7B5F00D6EC47 /* PBXBuildRule */,
 				0269E02212D2E79A003BD84A /* PBXBuildRule */,
 				0269E02312D2E79A003BD84A /* PBXBuildRule */,
 			);

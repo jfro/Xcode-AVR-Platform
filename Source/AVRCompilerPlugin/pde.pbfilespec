@@ -1,13 +1,13 @@
 (
 	{
 		Identifier = "sourcecode.pde";
-		BasedOn = sourcecode;
+		BasedOn = sourcecode.cpp;
 		Name = "Arduino sketch files";
 		Extensions = (
 			pde,
 		);
 		ComputerLanguage = "c.cpp";
 		Language = "xcode.lang.cpp";
-		AppliesToBuildRules = yes;
+		AppliesToBuildRules = YES;
 	},
 )

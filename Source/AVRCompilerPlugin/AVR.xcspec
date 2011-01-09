@@ -10,24 +10,7 @@
 		"sourcecode.cpp.cpp",
 		"sourcecode.c.c",
 	);
-	CommandOutputParser = (
-		(
-			"^([^:]+):([0-9]+): warning: (.*)$",
-			"emit-warning",
-		),
-		(
-			"^([^:]+):([0-9]+): (.*)$",
-			"emit-error",
-		),
-		(
-			"errors in preprocessor",
-			ignore,
-		),
-		(
-			"error in preprocessor",
-			ignore,
-		),
-	);
+	CommandOutputParser = XCGccCommandOutputParser;
 	Options = (
 		{
 			Name = Input;
@@ -38,74 +21,32 @@
 			InputDependencies = "$(Input)";
 			IsCommandInput = YES;
 		},
-		{
-			Name = "SLICE_CPP_FLAG";
-			Type = bool;
-			DefaultValue = NO;
-			Category = Slice;
+		{	Name = HEADER_SEARCH_PATHS;
+			Type = StringList;
+			CommandLineFlag = "-I";
+			DefaultValue = "$(SDKROOT)/arduino/cores/arduino";
+			Category = Arduino;
 		},
 		{
-			Name = "SLICE_ICE_FLAG";
-			Type = bool;
-			DefaultValue = NO;
-			CommandLineArgs = {
-				NO = ();
-				YES = (
-					"--ice",
-				);
-			};
-			Category = Slice;
-		},
-		{
-			Name = "SLICE_STREAM_FLAG";
-			Type = bool;
-			DefaultValue = NO;
-			CommandLineArgs = {
-				NO = ();
-				YES = (
-					"--stream",
-				);
-			};
-			Category = Slice;
-		},
-		{
-			Name = "SLICE_CHECKSUM_FLAG";
-			Type = bool;
-			DefaultValue = NO;
-			CommandLineArgs = {
-				NO = ();
-				YES = (
-					"--checksum",
-				);
-			};
-			Category = Slice;
-		},
-		{
-			Name = "SLICE_INCLUDE_PATH";
-			Type = pathlist;
-			DefaultValue = "";
-			CommandLineArgs = (
-				"-I",
-				"$(value)",
-			);
-			Category = Slice;
-		},
-		{
-			Name = "SLICE_PREPROCESSOR_DEFINITIONS";
-			Type = stringlist;
-			"CommandLinePrefixFlag" = "-D";
-			Category = Slice;
-		},
-		{
-			Name = "SLICE_ICE_HOME";
-			Type = string;
-			DefaultValue = "";
-			Category = Slice;
-		},
+			Name = "AVR_CPU_CLOCK";
+			Type = Enumeration;
+			AllowedValues = (
+				1000000L,
+				16000000L,
+            );
+            DefaultValue = 16000000L;
+            CommandLineArgs = {
+                "" = ();
+                "<<otherwise>>" = (
+                    "-DF_CPU=$(value)",
+                );
+            };
+            Category = Arduino;
+        },
 	);
 	OptionCategories = (
 		{
-			Name = "Code Generation";
+			Name = "Arduino";
 			IconName = "PBX-option-build";
 		},
 	);
