@@ -11,7 +11,10 @@ Todo
 * Add phase to handle doing the ihex stuff in target template
 * Figure why SDK shows as Unknown OS
 * **LINKER**: Linker is still a mess/hack, compiler feeds flags currently
-* Include the standard libraries
+* Include the standard libraries (and support linking)
+* Include AVR toolchain in SDK (maybe in an Installer)
+* Have an upload target or phase?
+* Support .pde files
 
 
 Requirements
@@ -32,3 +35,4 @@ Notes
 =====
 
 * It's messy, not sure how to do proper linker class yet, methods aren't being called
+* Projects using libraries will have to include library sources in their project
