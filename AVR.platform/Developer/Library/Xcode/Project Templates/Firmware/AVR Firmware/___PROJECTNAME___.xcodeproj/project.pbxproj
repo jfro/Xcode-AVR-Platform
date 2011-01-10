@@ -6,6 +6,21 @@
 	objectVersion = 42;
 	objects = {
 
+/* Begin PBXAggregateTarget section */
+		0249EE5012DAB2BC0017AF09 /* Upload */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 0249EE5312DAB2F20017AF09 /* Build configuration list for PBXAggregateTarget "Upload" */;
+			buildPhases = (
+				0249EE4F12DAB2BC0017AF09 /* Upload via avrdude */,
+			);
+			dependencies = (
+				0249EE5B12DAB30C0017AF09 /* PBXTargetDependency */,
+			);
+			name = Upload;
+			productName = Upload;
+		};
+/* End PBXAggregateTarget section */
+
 /* Begin PBXBuildFile section */
 		0269E01B12D2E750003BD84A /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F0084DE50D2E4A6C00BCB246 /* main.cpp */; };
 		02B6523612D2ECDE0076078A /* ___PROJECTNAMEASIDENTIFIER___.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 02B6523512D2ECDE0076078A /* ___PROJECTNAMEASIDENTIFIER___.cpp */; };
@@ -38,9 +53,19 @@
 		};
 /* End PBXBuildRule section */
 
+/* Begin PBXContainerItemProxy section */
+		0249EE5A12DAB30C0017AF09 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 08FB7793FE84155DC02AAC07 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0282DA5E12D2E3E7001A0AD3 /* ___PROJECTNAMEASIDENTIFIER___ */;
+			remoteInfo = ___PROJECTNAMEASIDENTIFIER___;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
-		0282DA5F12D2E3E7001A0AD3 /* AVRFirmware.elf */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = AVRFirmware.elf; sourceTree = BUILT_PRODUCTS_DIR; };
-		02B6523512D2ECDE0076078A /* ___PROJECTNAMEASIDENTIFIER___.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.pde; fileEncoding = 4; path = ___PROJECTNAMEASIDENTIFIER___.cpp; sourceTree = "<group>"; };
+		0282DA5F12D2E3E7001A0AD3 /* ___PROJECTNAMEASIDENTIFIER___.elf */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = ___PROJECTNAMEASIDENTIFIER___.elf; sourceTree = BUILT_PRODUCTS_DIR; };
+		02B6523512D2ECDE0076078A /* ___PROJECTNAMEASIDENTIFIER___.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.pde; fileEncoding = 4; path = "___PROJECTNAMEASIDENTIFIER___.cpp"; sourceTree = "<group>"; };
 		F0084DE50D2E4A6C00BCB246 /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; indentWidth = 4; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; tabWidth = 4; usesTabs = 1; };
 /* End PBXFileReference section */
 
@@ -84,7 +109,7 @@
 		1AB674ADFE9D54B511CA2CBB /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				0282DA5F12D2E3E7001A0AD3 /* AVRFirmware.elf */,
+				0282DA5F12D2E3E7001A0AD3 /* ___PROJECTNAMEASIDENTIFIER___.elf */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -92,9 +117,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		0282DA5E12D2E3E7001A0AD3 /* AVRFirmware */ = {
+		0282DA5E12D2E3E7001A0AD3 /* ___PROJECTNAMEASIDENTIFIER___ */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 0282DA6412D2E3FE001A0AD3 /* Build configuration list for PBXNativeTarget "AVRFirmware" */;
+			buildConfigurationList = 0282DA6412D2E3FE001A0AD3 /* Build configuration list for PBXNativeTarget "___PROJECTNAMEASIDENTIFIER___" */;
 			buildPhases = (
 				0282DA5C12D2E3E7001A0AD3 /* Sources */,
 				0282DA5D12D2E3E7001A0AD3 /* Frameworks */,
@@ -107,9 +132,9 @@
 			);
 			dependencies = (
 			);
-			name = AVRFirmware;
-			productName = AVRFirmware;
-			productReference = 0282DA5F12D2E3E7001A0AD3 /* AVRFirmware.elf */;
+			name = ___PROJECTNAMEASIDENTIFIER___;
+			productName = ___PROJECTNAMEASIDENTIFIER___;
+			productReference = 0282DA5F12D2E3E7001A0AD3 /* ___PROJECTNAMEASIDENTIFIER___.elf */;
 			productType = "com.buttered-cat.product-type.avr-firmware";
 		};
 /* End PBXNativeTarget section */
@@ -117,7 +142,7 @@
 /* Begin PBXProject section */
 		08FB7793FE84155DC02AAC07 /* Project object */ = {
 			isa = PBXProject;
-			buildConfigurationList = 01706F350A34762900E43B08 /* Build configuration list for PBXProject "ArduinoOnXcode" */;
+			buildConfigurationList = 01706F350A34762900E43B08 /* Build configuration list for PBXProject "___PROJECTNAME___" */;
 			compatibilityVersion = "Xcode 2.4";
 			developmentRegion = English;
 			hasScannedForEncodings = 1;
@@ -131,12 +156,28 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				0282DA5E12D2E3E7001A0AD3 /* AVRFirmware */,
+				0282DA5E12D2E3E7001A0AD3 /* ___PROJECTNAMEASIDENTIFIER___ */,
+				0249EE5012DAB2BC0017AF09 /* Upload */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		0249EE4F12DAB2BC0017AF09 /* Upload via avrdude */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Upload via avrdude";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "#!/bin/sh\n\nFIRMWARE_FILE=\"$BUILT_PRODUCTS_DIR/$PRODUCT_NAME.elf.hex\"\n\nAVRDUDE_DIR=/usr/local/CrossPack-AVR/bin\n\nAVRDUDE=${AVRDUDE_DIR}/avrdude\n\nAVRDUDE_WRITE_FLASH=\"-U flash:w:${FIRMWARE_FILE}\"\nAVRDUDE_FLAGS=\"-F -p ${ARCHS} -P ${AVRDUDE_PORT} -c ${AVRDUDE_PROGRAMMER} -b ${AVRDUDE_UPLOAD_RATE}\"\n\n# upload it\n${AVRDUDE} ${AVRDUDE_FLAGS} ${AVRDUDE_WRITE_FLASH}\n\nexit $?\n";
+			showEnvVarsInLog = 0;
+		};
 		027241FA12D3EA6200A995AC /* Make Firmware Hex */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -166,6 +207,14 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		0249EE5B12DAB30C0017AF09 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 0282DA5E12D2E3E7001A0AD3 /* ___PROJECTNAMEASIDENTIFIER___ */;
+			targetProxy = 0249EE5A12DAB30C0017AF09 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin XCBuildConfiguration section */
 		01706F360A34762900E43B08 /* Development */ = {
 			isa = XCBuildConfiguration;
@@ -181,6 +230,26 @@
 			};
 			name = Deployment;
 		};
+		0249EE5112DAB2BC0017AF09 /* Development */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				AVRDUDE_PORT = /dev/tty.usbmodem411;
+				AVRDUDE_PROGRAMMER = arduino;
+				AVRDUDE_UPLOAD_RATE = 115200;
+				PRODUCT_NAME = ___PROJECTNAMEASIDENTIFIER___;
+			};
+			name = Development;
+		};
+		0249EE5212DAB2BC0017AF09 /* Deployment */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				AVRDUDE_PORT = /dev/tty.usbmodem411;
+				AVRDUDE_PROGRAMMER = arduino;
+				AVRDUDE_UPLOAD_RATE = 115200;
+				PRODUCT_NAME = ___PROJECTNAMEASIDENTIFIER___;
+			};
+			name = Deployment;
+		};
 		0282DA6012D2E3E8001A0AD3 /* Development */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -191,7 +260,7 @@
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_VERSION = "com.buttered-cat.compilers.avr";
 				INSTALL_PATH = /usr/local/bin;
-				PRODUCT_NAME = AVRFirmware.elf;
+				PRODUCT_NAME = ___PROJECTNAMEASIDENTIFIER___.elf;
 			};
 			name = Development;
 		};
@@ -204,7 +273,7 @@
 				GCC_ENABLE_FIX_AND_CONTINUE = NO;
 				GCC_VERSION = "com.buttered-cat.compilers.avr";
 				INSTALL_PATH = /usr/local/bin;
-				PRODUCT_NAME = AVRFirmware.elf;
+				PRODUCT_NAME = ___PROJECTNAMEASIDENTIFIER___.elf;
 				ZERO_LINK = NO;
 			};
 			name = Deployment;
@@ -212,7 +281,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		01706F350A34762900E43B08 /* Build configuration list for PBXProject "ArduinoOnXcode" */ = {
+		01706F350A34762900E43B08 /* Build configuration list for PBXProject "___PROJECTNAME___" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				01706F360A34762900E43B08 /* Development */,
@@ -221,7 +290,16 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Development;
 		};
-		0282DA6412D2E3FE001A0AD3 /* Build configuration list for PBXNativeTarget "AVRFirmware" */ = {
+		0249EE5312DAB2F20017AF09 /* Build configuration list for PBXAggregateTarget "Upload" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0249EE5112DAB2BC0017AF09 /* Development */,
+				0249EE5212DAB2BC0017AF09 /* Deployment */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Development;
+		};
+		0282DA6412D2E3FE001A0AD3 /* Build configuration list for PBXNativeTarget "___PROJECTNAMEASIDENTIFIER___" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				0282DA6012D2E3E8001A0AD3 /* Development */,
