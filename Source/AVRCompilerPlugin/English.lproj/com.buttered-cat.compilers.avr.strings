@@ -6,7 +6,13 @@
   Copyright 2011 Ambrosia Software, Inc. All rights reserved.
 */
 
-"[Arduino]-category" = "AVR/Arduino - code generation";
+"[Arduino]-category" = "AVR/Arduino - Compiler Settings";
 
 "[AVR_CPU_CLOCK]-name" = "AVR CPU Clock Speed";
 "[AVR_CPU_CLOCK]-description" = "Clock speed of chip to compile for. [AVR_CPU_CLOCK, -DF_CPU]";
+
+"[AVR_CFLAGS]-name" = "AVR Compiler Flags";
+"[AVR_CFLAGS]-description" = "AVR GCC's compiler flags. [AVR_CFLAGS]";
+
+"[HEADER_SEARCH_PATHS]-name" = "Header Search Paths";
+"[HEADER_SEARCH_PATHS]-description" = "Paths to search headers for, use $(inherited) to keep arduino core path. [HEADER_SEARCH_PATHS, -I]";
