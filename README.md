@@ -36,3 +36,4 @@ Notes
 
 * It's messy, not sure how to do proper linker class yet, methods aren't being called
 * Projects using libraries will have to include library sources in their project
+* **Uploading**: Edit the Upload target's build settings to make sure you use the proper settings for your board
