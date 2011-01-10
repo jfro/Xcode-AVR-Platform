@@ -27,6 +27,12 @@
 			DefaultValue = "$(SDKROOT)/arduino/cores/arduino";
 			Category = Arduino;
 		},
+		{	Name = AVR_CFLAGS;
+			Type = StringList;
+			// from arduino: -c -g -Os -w -fno-exceptions -ffunction-sections -fdata-sections -mmcu=atmega328p -DF_CPU=16000000L -DARDUINO=21
+			DefaultValue = "-g -Os -Wall -fno-exceptions -ffunction-sections -fdata-sections -DARDUINO=21";
+			Category = Arduino;
+		},
 		{
 			Name = "AVR_CPU_CLOCK";
 			Type = Enumeration;
