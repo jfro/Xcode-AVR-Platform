@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0269E01B12D2E750003BD84A /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F0084DE50D2E4A6C00BCB246 /* main.cpp */; };
-		02B6523612D2ECDE0076078A /* sketch.pde in Sources */ = {isa = PBXBuildFile; fileRef = 02B6523512D2ECDE0076078A /* sketch.pde */; };
+		02B6523612D2ECDE0076078A /* sketch.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 02B6523512D2ECDE0076078A /* sketch.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXBuildRule section */
@@ -40,7 +40,7 @@
 
 /* Begin PBXFileReference section */
 		0282DA5F12D2E3E7001A0AD3 /* AVRFirmware.elf */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = AVRFirmware.elf; sourceTree = BUILT_PRODUCTS_DIR; };
-		02B6523512D2ECDE0076078A /* sketch.pde */ = {isa = PBXFileReference; explicitFileType = sourcecode.pde; fileEncoding = 4; path = sketch.pde; sourceTree = "<group>"; };
+		02B6523512D2ECDE0076078A /* sketch.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.pde; fileEncoding = 4; path = sketch.cpp; sourceTree = "<group>"; };
 		F0084DE50D2E4A6C00BCB246 /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; indentWidth = 4; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; tabWidth = 4; usesTabs = 1; };
 /* End PBXFileReference section */
 
@@ -76,7 +76,7 @@
 		08FB7795FE84155DC02AAC07 /* Source */ = {
 			isa = PBXGroup;
 			children = (
-				02B6523512D2ECDE0076078A /* sketch.pde */,
+				02B6523512D2ECDE0076078A /* sketch.cpp */,
 			);
 			name = Source;
 			sourceTree = "<group>";
@@ -160,7 +160,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0269E01B12D2E750003BD84A /* main.cpp in Sources */,
-				02B6523612D2ECDE0076078A /* sketch.pde in Sources */,
+				02B6523612D2ECDE0076078A /* sketch.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
