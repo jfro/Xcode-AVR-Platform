@@ -148,8 +148,8 @@
 
 // Linker parameters setted by compiler
 #if XCODE_VERSION >= 23
-- (id)compilerRequestedLinkerParameters;
-- (void)addCompilerRequestedLinkerParameters:(id)fp8;
+- (NSDictionary *)compilerRequestedLinkerParameters;
+- (void)addCompilerRequestedLinkerParameters:(NSDictionary *)fp8;
 - (void)removeAllCompilerRequestedLinkerParameters;
 #endif
 

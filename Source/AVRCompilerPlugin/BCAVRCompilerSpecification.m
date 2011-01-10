@@ -113,7 +113,7 @@
 	[context setStringValue:@"/usr/local/CrossPack-AVR/bin/avr-gcc" forDynamicSetting:@"gcc_compiler_driver_for_linking"];
 	NSString *linkerFlags = [NSString stringWithFormat:@"-lm $(SDKROOT)/arduino/libArduinoCore.$(arch).a", [context expandedValueForString:@"$(SDKROOT)"]];
 	[context addCompilerRequestedLinkerParameters:[NSDictionary dictionaryWithObject:linkerFlags forKey:@"ALL_OTHER_LDFLAGS"]];
-	NSLog(@"Linker flags via compiler: %@", [context compilerRequestedLinkerParameters]);
+	//NSLog(@"Linker flags via compiler: %@", [context compilerRequestedLinkerParameters]);
 	//	if ([context expandedBooleanValueForString:@"$(GDC_GENERATE_INTERFACE_FILES)"]) {
 	//		NSString *objRoot = [context expandedValueForString:@"$(OBJROOT)"];
 	//		NSString *interfaceDir = [objRoot stringByAppendingPathComponent:@"dinterface"];
