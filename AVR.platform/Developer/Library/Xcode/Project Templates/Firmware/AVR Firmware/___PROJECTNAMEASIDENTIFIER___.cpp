@@ -1,11 +1,10 @@
-/*
- *  sketch.cpp
- *  ArduinoOnXcode
- *
- *  Created by Jeremy Knope on 1/4/11.
- *  Copyright 2011 Buttered Cat Software. All rights reserved.
- *
- */
+//
+//  ___PROJECTNAMEASIDENTIFIER___.cpp
+//  ___PROJECTNAME___
+//
+//  Created by ___FULLUSERNAME___ on ___DATE___.
+//  Copyright ___YEAR___ ___ORGANIZATIONNAME___. All rights reserved.
+//
 
 #include "WProgram.h"
 
