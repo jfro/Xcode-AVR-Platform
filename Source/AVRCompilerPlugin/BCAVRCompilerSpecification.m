@@ -20,6 +20,13 @@
 	[PBXTargetBuildContext activateImportedFileType:type withCompiler:spec];
 }
 
+- (id)doSpecialDependencySetupForCommand:(id)arg1 withInputNodes:(id)arg2 inBuildContext:(PBXTargetBuildContext *)context
+{
+	id result = [super doSpecialDependencySetupForCommand:arg1 withInputNodes:arg2 inBuildContext:context];
+	NSLog(@"(GCC) args(%@, %@) Super result: %@", arg1, arg2, result);
+	return result;
+}
+
 - (NSArray *)importedFilesForPath:(NSString *)path ensureFilesExist:(BOOL)ensure inTargetBuildContext:(PBXTargetBuildContext *)context
 {
 	return [NSArray array];
@@ -104,7 +111,9 @@
 	[context setStringValue:@"com.buttered-cat.avr.linker" forDynamicSetting:@"compiler_mandated_linker"];
 	// This fixes link problem for Xcode 3.1.
 	[context setStringValue:@"/usr/local/CrossPack-AVR/bin/avr-gcc" forDynamicSetting:@"gcc_compiler_driver_for_linking"];
-	
+	NSString *linkerFlags = [NSString stringWithFormat:@"-lm $(SDKROOT)/arduino/libArduinoCore.$(arch).a", [context expandedValueForString:@"$(SDKROOT)"]];
+	[context addCompilerRequestedLinkerParameters:[NSDictionary dictionaryWithObject:linkerFlags forKey:@"ALL_OTHER_LDFLAGS"]];
+	NSLog(@"Linker flags via compiler: %@", [context compilerRequestedLinkerParameters]);
 	//	if ([context expandedBooleanValueForString:@"$(GDC_GENERATE_INTERFACE_FILES)"]) {
 	//		NSString *objRoot = [context expandedValueForString:@"$(OBJROOT)"];
 	//		NSString *interfaceDir = [objRoot stringByAppendingPathComponent:@"dinterface"];

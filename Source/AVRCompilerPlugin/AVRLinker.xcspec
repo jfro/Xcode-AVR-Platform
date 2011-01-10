@@ -70,7 +70,7 @@
 		},
 		{   Name = ALL_OTHER_LDFLAGS;
 			Type = StringList;
-			DefaultValue = "$(SDKROOT)/arduino/libArduinoCore.$(arch).a -lm $(LD_FLAGS) $(SECTORDER_FLAGS) $(OTHER_LDFLAGS) $(OTHER_LDFLAGS_$(variant)) $(OTHER_LDFLAGS_$(arch)) $(OTHER_LDFLAGS_$(variant)_$(arch)) $(OTHER_LIBTOOLFLAGS) $(OTHER_LIBTOOLFLAGS_$(variant)) $(OTHER_LIBTOOLFLAGS_$(arch)) $(OTHER_LIBTOOLFLAGS_$(variant)_$(arch)) $(PRODUCT_SPECIFIC_LDFLAGS)";
+			DefaultValue = "$(LD_FLAGS) $(SECTORDER_FLAGS) $(OTHER_LDFLAGS) $(OTHER_LDFLAGS_$(variant)) $(OTHER_LDFLAGS_$(arch)) $(OTHER_LDFLAGS_$(variant)_$(arch)) $(OTHER_LIBTOOLFLAGS) $(OTHER_LIBTOOLFLAGS_$(variant)) $(OTHER_LIBTOOLFLAGS_$(arch)) $(OTHER_LIBTOOLFLAGS_$(variant)_$(arch)) $(PRODUCT_SPECIFIC_LDFLAGS)";
 			CommandLinePrefixFlag = "";
 		},
 		{

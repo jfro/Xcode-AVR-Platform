@@ -8,9 +8,9 @@ Todo
 
 * Update & include Xcode project template to use proper platform settings
 * Properly label object file types elf (probably not necessary, OCD)
-* Add phase to handle doing the ihex stuff
+* Add phase to handle doing the ihex stuff in target template
 * Figure why SDK shows as Unknown OS
-* **BLOCKER**: Get target to specify our custom linker, overriding apple's makes it break mac/ios apps
+* **LINKER**: Linker is still a mess/hack, compiler feeds flags currently
 * Include the standard libraries
 
 
@@ -25,13 +25,10 @@ Installation
 
 * Install [CrossPack for AVR](http://www.obdev.at/products/crosspack/index.html)
 * Copy AVR.platform to /Developer/Platforms/
-* Copy AVRCompiler.xcplugin to /Developer/Library/Xcode/Plug-ins/ (compiler plugins don't seem to work right elsewhere)
+* Build & Copy AVRCompilerPlugin.xcplugin to /Developer/Library/Xcode/Plug-ins/ (compiler plugins don't seem to work right elsewhere)
 
 
 Notes
 =====
 
-* Strings file for compiler plugin seems ignored
-* Can't define a standalone compiler spec, seems to need BasedOn = "apples identifier", might require actual plugin code
-* Not sure how you can control what build settings are in the UI, might be plug-in code based
-* Not sure how to define what linker is used by the platform (if linker has our identifier)
+* It's messy, not sure how to do proper linker class yet, methods aren't being called
