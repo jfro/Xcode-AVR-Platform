@@ -14,5 +14,5 @@
 "[AVR_CFLAGS]-name" = "AVR Compiler Flags";
 "[AVR_CFLAGS]-description" = "AVR GCC's compiler flags. [AVR_CFLAGS]";
 
-"[HEADER_SEARCH_PATHS]-name" = "Header Search Paths";
-"[HEADER_SEARCH_PATHS]-description" = "Paths to search headers for, use $(inherited) to keep arduino core path. [HEADER_SEARCH_PATHS, -I]";
+"[AVR_HEADER_SEARCH_PATHS]-name" = "Header Search Paths";
+"[AVR_HEADER_SEARCH_PATHS]-description" = "Paths to search headers for, use $(inherited) to keep arduino core path. [AVR_HEADER_SEARCH_PATHS, -I]";

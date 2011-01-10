@@ -21,10 +21,10 @@
 			InputDependencies = "$(Input)";
 			IsCommandInput = YES;
 		},
-		{	Name = HEADER_SEARCH_PATHS;
+		{	Name = AVR_HEADER_SEARCH_PATHS;
 			Type = StringList;
 			CommandLineFlag = "-I";
-			DefaultValue = "$(SDKROOT)/arduino/cores/arduino";
+			DefaultValue = "$(SDKROOT)/arduino/cores/arduino .";
 			Category = Arduino;
 		},
 		{	Name = AVR_CFLAGS;
