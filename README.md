@@ -28,7 +28,7 @@ Requirements
 Installation
 ============
 
-* Click downloads and download the pkg installer
+* Click downloads and download the [pkg installer](https://github.com/downloads/jfro/Xcode-AVR-Platform/Xcode%20AVR%20Platform%20Installer.zip)
 * Run the installer, installs:
 	* AVR.platform to /Developer/Platforms
 	* AVRCompilerPlugin.xcplugin to /Developer/Library/Xcode/Plug-ins
