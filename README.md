@@ -22,15 +22,16 @@ Requirements
 ============
 
 * Xcode 3 (tested on 3.2, might not work with earlier or Xcode DP)
-* [CrossPack for AVR](http://www.obdev.at/products/crosspack/index.html) (hoping to include it in the SDK later)
+* 64-bit machine (or build your own gcc toolchain, I'll eventually include both 32 & 64)
+* atmega328p until I figure out how best I want to handle the core source
 
 Installation
 ============
 
-* Install [CrossPack for AVR](http://www.obdev.at/products/crosspack/index.html)
-* Copy AVR.platform to /Developer/Platforms/
-* Build & Copy AVRCompilerPlugin.xcplugin to /Developer/Library/Xcode/Plug-ins/ (compiler plugins don't seem to work right elsewhere)
-
+* Click downloads and download the pkg installer
+* Run the installer, installs:
+	* AVR.platform to /Developer/Platforms
+	* AVRCompilerPlugin.xcplugin to /Developer/Library/Xcode/Plug-ins
 
 Notes
 =====
@@ -38,4 +39,4 @@ Notes
 * It's messy, not sure how to do proper linker class yet, methods aren't being called
 * Projects using libraries will have to include library sources in their project
 * **Uploading**: Edit the Upload target's build settings to make sure you use the proper settings for your board
-* Only has atmega328p support since I statically compiled the core
+* Only has atmega328p support since I statically compiled the core source files
