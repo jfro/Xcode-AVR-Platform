@@ -4,13 +4,16 @@
 	Class = "BCAVRCompilerSpecification";
 	Name = "AVR GCC 4.3.3";
 	Description = "AVR GCC 4.3.3";
-	Architectures = (atmega328,atmega328p);
+	Architectures = (
+		atmega328,
+		atmega328p,
+	);
 	InputFileTypes = (
 		"sourcecode.pde",
 		"sourcecode.cpp.cpp",
 		"sourcecode.c.c",
 	);
-	CommandOutputParser = XCGccCommandOutputParser;
+	CommandOutputParser = "XCGccCommandOutputParser";
 	Options = (
 		{
 			Name = Input;
@@ -21,15 +24,16 @@
 			InputDependencies = "$(Input)";
 			IsCommandInput = YES;
 		},
-		{	Name = AVR_HEADER_SEARCH_PATHS;
+		{
+			Name = "AVR_HEADER_SEARCH_PATHS";
 			Type = StringList;
 			CommandLineFlag = "-I";
 			DefaultValue = "$(SDKROOT)/arduino/cores/arduino .";
 			Category = Arduino;
 		},
-		{	Name = AVR_CFLAGS;
+		{
+			Name = "AVR_CFLAGS";
 			Type = StringList;
-			// from arduino: -c -g -Os -w -fno-exceptions -ffunction-sections -fdata-sections -mmcu=atmega328p -DF_CPU=16000000L -DARDUINO=21
 			DefaultValue = "-g -Os -Wall -fno-exceptions -ffunction-sections -fdata-sections -DARDUINO=21";
 			Category = Arduino;
 		},
@@ -39,22 +43,22 @@
 			AllowedValues = (
 				1000000L,
 				16000000L,
-            );
-            DefaultValue = 16000000L;
-            CommandLineArgs = {
-                "" = ();
-                "<<otherwise>>" = (
-                    "-DF_CPU=$(value)",
-                );
-            };
-            Category = Arduino;
-        },
+			);
+			DefaultValue = 16000000L;
+			CommandLineArgs = {
+				"" = ();
+				"<<otherwise>>" = (
+					"-DF_CPU=$(value)",
+				);
+			};
+			Category = Arduino;
+		},
 	);
 	OptionCategories = (
 		{
-			Name = "Arduino";
+			Name = Arduino;
 			IconName = "PBX-option-build";
 		},
 	);
-	ExecPath = "/usr/local/CrossPack-AVR/bin/avr-gcc";
+	ExecPath = "$(SDKROOT)/usr/bin/avr-gcc";
 }

@@ -110,7 +110,8 @@
 	// Tell Xcode to use the GDC linker.
 	[context setStringValue:@"com.buttered-cat.avr.linker" forDynamicSetting:@"compiler_mandated_linker"];
 	// This fixes link problem for Xcode 3.1.
-	[context setStringValue:@"/usr/local/CrossPack-AVR/bin/avr-gcc" forDynamicSetting:@"gcc_compiler_driver_for_linking"];
+	NSString *compilerPath = [NSString stringWithFormat:@"$(SDKROOT)/usr/bin/avr-gcc", [context expandedValueForString:@"$(SDKROOT)"]];
+	[context setStringValue:compilerPath forDynamicSetting:@"gcc_compiler_driver_for_linking"];
 	NSString *linkerFlags = [NSString stringWithFormat:@"-lm $(SDKROOT)/arduino/libArduinoCore.$(arch).a", [context expandedValueForString:@"$(SDKROOT)"]];
 	[context addCompilerRequestedLinkerParameters:[NSDictionary dictionaryWithObject:linkerFlags forKey:@"ALL_OTHER_LDFLAGS"]];
 	//NSLog(@"Linker flags via compiler: %@", [context compilerRequestedLinkerParameters]);
