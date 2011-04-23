@@ -58,13 +58,13 @@
 			isa = PBXContainerItemProxy;
 			containerPortal = 08FB7793FE84155DC02AAC07 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 0282DA5E12D2E3E7001A0AD3 /* ___PROJECTNAMEASIDENTIFIER___ */;
-			remoteInfo = ___PROJECTNAMEASIDENTIFIER___;
+			remoteGlobalIDString = 0282DA5E12D2E3E7001A0AD3;
+			remoteInfo = "___PROJECTNAMEASIDENTIFIER___";
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0282DA5F12D2E3E7001A0AD3 /* ___PROJECTNAMEASIDENTIFIER___.elf */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = ___PROJECTNAMEASIDENTIFIER___.elf; sourceTree = BUILT_PRODUCTS_DIR; };
+		0282DA5F12D2E3E7001A0AD3 /* ___PROJECTNAMEASIDENTIFIER___.elf */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "___PROJECTNAMEASIDENTIFIER___.elf"; sourceTree = BUILT_PRODUCTS_DIR; };
 		02B6523512D2ECDE0076078A /* ___PROJECTNAMEASIDENTIFIER___.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.pde; fileEncoding = 4; path = "___PROJECTNAMEASIDENTIFIER___.cpp"; sourceTree = "<group>"; };
 		F0084DE50D2E4A6C00BCB246 /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; indentWidth = 4; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; tabWidth = 4; usesTabs = 1; };
 /* End PBXFileReference section */
@@ -132,8 +132,8 @@
 			);
 			dependencies = (
 			);
-			name = ___PROJECTNAMEASIDENTIFIER___;
-			productName = ___PROJECTNAMEASIDENTIFIER___;
+			name = "___PROJECTNAMEASIDENTIFIER___";
+			productName = "___PROJECTNAMEASIDENTIFIER___";
 			productReference = 0282DA5F12D2E3E7001A0AD3 /* ___PROJECTNAMEASIDENTIFIER___.elf */;
 			productType = "com.buttered-cat.product-type.avr-firmware";
 		};
@@ -175,7 +175,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "#!/bin/sh\n\nFIRMWARE_FILE=\"$BUILT_PRODUCTS_DIR/$PRODUCT_NAME.elf.hex\"\n\nAVRDUDE_DIR=/usr/local/CrossPack-AVR/bin\n\nAVRDUDE=${AVRDUDE_DIR}/avrdude\n\nAVRDUDE_WRITE_FLASH=\"-U flash:w:${FIRMWARE_FILE}\"\nAVRDUDE_FLAGS=\"-F -p ${ARCHS} -P ${AVRDUDE_PORT} -c ${AVRDUDE_PROGRAMMER} -b ${AVRDUDE_UPLOAD_RATE}\"\n\n# upload it\n${AVRDUDE} ${AVRDUDE_FLAGS} ${AVRDUDE_WRITE_FLASH}\n\nexit $?\n";
+			shellScript = "#!/bin/sh\n\nFIRMWARE_FILE=\"$BUILT_PRODUCTS_DIR/$PRODUCT_NAME.elf.hex\"\n\nAVRDUDE_DIR=${SDKROOT}/usr/bin\n\nAVRDUDE=${AVRDUDE_DIR}/avrdude\n\nAVRDUDE_WRITE_FLASH=\"-U flash:w:${FIRMWARE_FILE}\"\nAVRDUDE_FLAGS=\"-F -p ${ARCHS} -P ${AVRDUDE_PORT} -c ${AVRDUDE_PROGRAMMER} -b ${AVRDUDE_UPLOAD_RATE}\"\n\n# upload it\n${AVRDUDE} ${AVRDUDE_FLAGS} ${AVRDUDE_WRITE_FLASH}\n\nexit $?\n";
 			showEnvVarsInLog = 0;
 		};
 		027241FA12D3EA6200A995AC /* Make Firmware Hex */ = {
@@ -190,7 +190,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "/usr/local/CrossPack-AVR/bin/avr-objcopy -O ihex -R .eeprom \"$BUILT_PRODUCTS_DIR/$PRODUCT_NAME\" \"$BUILT_PRODUCTS_DIR/$PRODUCT_NAME.hex\"\n";
+			shellScript = "${SDKROOT}/usr/bin/avr-objcopy -O ihex -R .eeprom \"$BUILT_PRODUCTS_DIR/$PRODUCT_NAME\" \"$BUILT_PRODUCTS_DIR/$PRODUCT_NAME.hex\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -236,7 +236,7 @@
 				AVRDUDE_PORT = /dev/tty.usbmodem411;
 				AVRDUDE_PROGRAMMER = arduino;
 				AVRDUDE_UPLOAD_RATE = 115200;
-				PRODUCT_NAME = ___PROJECTNAMEASIDENTIFIER___;
+				PRODUCT_NAME = "___PROJECTNAMEASIDENTIFIER___";
 			};
 			name = Development;
 		};
@@ -246,7 +246,7 @@
 				AVRDUDE_PORT = /dev/tty.usbmodem411;
 				AVRDUDE_PROGRAMMER = arduino;
 				AVRDUDE_UPLOAD_RATE = 115200;
-				PRODUCT_NAME = ___PROJECTNAMEASIDENTIFIER___;
+				PRODUCT_NAME = "___PROJECTNAMEASIDENTIFIER___";
 			};
 			name = Deployment;
 		};
@@ -260,7 +260,7 @@
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_VERSION = "com.buttered-cat.compilers.avr";
 				INSTALL_PATH = /usr/local/bin;
-				PRODUCT_NAME = ___PROJECTNAMEASIDENTIFIER___.elf;
+				PRODUCT_NAME = "___PROJECTNAMEASIDENTIFIER___.elf";
 			};
 			name = Development;
 		};
@@ -273,7 +273,7 @@
 				GCC_ENABLE_FIX_AND_CONTINUE = NO;
 				GCC_VERSION = "com.buttered-cat.compilers.avr";
 				INSTALL_PATH = /usr/local/bin;
-				PRODUCT_NAME = ___PROJECTNAMEASIDENTIFIER___.elf;
+				PRODUCT_NAME = "___PROJECTNAMEASIDENTIFIER___.elf";
 				ZERO_LINK = NO;
 			};
 			name = Deployment;
